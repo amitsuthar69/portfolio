@@ -1,0 +1,124 @@
+{
+  "title": {
+    "name": "Amit Suthar",
+    "links": [
+      {
+        "linkedin": "https://www.linkedin.com/in/amitsuthar69"
+      },
+      {
+        "github": "https://github.com/amitsuthar69"
+      },
+      {
+        "twitter": "https://twitter.com/notamitsuthar"
+      },
+      {
+        "website": "#"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institueName": "Thakur College of Engineering and Technology",
+      "score": "8.9",
+      "courseName": "Artificial Intelligence and Machine Learning",
+      "time": "2022-2026"
+    },
+    {
+      "institueName": "Thakur College of Science and Commerce",
+      "score": "77%",
+      "courseName": "HSC",
+      "time": "2021-2023"
+    }
+  ],
+  "experience": [
+    {
+      "position": "Frontend Integration intern",
+      "companyName": "PoiseCode Solutions LLP",
+      "time": "May 2024 - Aug 2024",
+      "type": "Remote",
+      "points": [
+        "Led the entire frontend-to-backend integration of Nenzy.ai, an AI-driven interviewing SaaS, using Vue.js and Nuxt3, ensuring seamless user experience.",
+        "Designed and implemented the Audio Interview system, enabling AI-driven candidate assessments that signifcantly enhanced the platform's core functionality and user engagement."
+      ]
+    },
+    {
+      "position": "Front-end Team Member",
+      "companyName": "TCET",
+      "time": "Aug 2023 - July 2024",
+      "type": "Remote",
+      "points": [
+        "Made meaningful contributions to Organization's active Open Source projects."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "projectName": "Portsicle",
+      "projectStack": [
+        "golang"
+      ],
+      "time": "Dec 2022",
+      "points": [
+        "Portsicle is a suite of tunneling and proxy services.",
+        "With Portsicle, you can expose local servers to the internet or use the transparent proxy to monitor your devices' network traffic."
+      ],
+      "links": [
+        "https://github.com/portsicle",
+        "#"
+      ]
+    },
+    {
+      "projectName": "handOver",
+      "projectStack": [
+        "react",
+        "typeScript",
+        "tailwindcss",
+        "nextjs"
+      ],
+      "time": "Mar 2024",
+      "points": [
+        "A platform where folks from same college can exchange/sell their resource books and other stuff.",
+        "Aimed to address the challenge faced by my juniors who struggle to nd peers with the same resource books for the semester, facilitating resource exchanges by directly connecting them with each other."
+      ],
+      "links": [
+        "https://github.com/amitsuthar69/handOver",
+        "https://hand-over.vercel.app/"
+      ]
+    },
+    {
+      "projectName": "Teleport",
+      "projectStack": [
+        "golang",
+        "htmx"
+      ],
+      "time": "May 2023",
+      "points": [
+        "A URL shortener that generates unique short links using Base62 encoding of nanosecond-based hashes.",
+        "Built with Golang for efficiency and fully server-rendered for fast performance."
+      ],
+      "links": [
+        "https://github.com/amitsuthar69/teleport",
+        "https://tp.airtxt.me"
+      ]
+    }
+  ],
+  "skills": {
+    "languages": [
+      "Golang",
+      "JavaScript",
+      "C++",
+      "HTML",
+      "CSS"
+    ],
+    "framework": [
+      "React",
+      "Vue",
+      "Next",
+      "Tailwind"
+    ],
+    "databases": [
+      "MongoDB",
+      "SQLite"
+    ]
+  }
+}

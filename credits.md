@@ -1,0 +1,2 @@
+The overall theme of the website is highly inspired by https://github.com/rizkimcitra 's website. <br>
+The computer.png logo used on the main page of the website is taken from https://www.vecteezy.com/.
