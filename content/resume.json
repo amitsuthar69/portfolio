@@ -32,22 +32,23 @@
   ],
   "experience": [
     {
-      "position": "Frontend Integration intern",
+      "position": "Software Engineer Intern",
+      "companyName": "10Matrix Prime",
+      "time": "Jul 2025 - Oct 2025",
+      "type": "Remote",
+      "points": [
+        "Developed a React Native Android app to optimize Google Business Profiles, integrated UI with Firebase Backend, Google OAuth, Firestore and Razorpay billing workflows.",
+        "Built a custom AI model that generates business profile suggestions using Genetic Algorithm and Local Search Optimization."
+      ]
+    },
+    {
+      "position": "Frontend Engineer Intern",
       "companyName": "PoiseCode Solutions LLP",
       "time": "May 2024 - Aug 2024",
       "type": "Remote",
       "points": [
-        "Led the entire frontend-to-backend integration of Nenzy.ai, an AI-driven interviewing SaaS, using Vue.js and Nuxt3, ensuring seamless user experience.",
-        "Designed and implemented the Audio Interview system, enabling AI-driven candidate assessments that signifcantly enhanced the platform's core functionality and user engagement."
-      ]
-    },
-    {
-      "position": "Front-end Team Member",
-      "companyName": "TCET",
-      "time": "Aug 2023 - July 2024",
-      "type": "Remote",
-      "points": [
-        "Made meaningful contributions to Organization's active Open Source projects."
+        "Led the backend integration of an AI-driven interviewing SaaS using Vue.js and Nuxt3, delivering seamless user experience for 20+ enterprise clients across 4 countries.",
+        "Collaborated with senior developers to design and implement the Chat and Video Interview system, enabling AI-driven candidate assessments, boosting platform's core functionality and user experience."
       ]
     }
   ],
@@ -59,11 +60,26 @@
       ],
       "time": "Dec 2022",
       "points": [
-        "Portsicle is a suite of tunneling and proxy services.",
-        "With Portsicle, you can expose local servers to the internet or use the transparent proxy to monitor your devices' network traffic."
+        "Developed a reverse tunneling service to create a public ingress endpoint for local web servers, allowing developers to showcase their locally running apps to clients, stakeholders or to test APIs without deploying.",
+        "Implemented MessagePack binary serialization with lz4 compression for efficient client-server messaging (70% faster than JSON); showcased at MumbaiFOSS’25 as a Community Partner Project."
       ],
       "links": [
         "https://github.com/portsicle",
+        "https://portsicle.github.io/landing-page/"
+      ]
+    },
+    {
+      "projectName": "Quasar - Instagram stats for clippers.",
+      "projectStack": [
+        "nodejs"
+      ],
+      "time": "Nov 2024",
+      "points": [
+        "Developed an interactive Discord bot using Instagram Reel API with bio-code based profile verification.",
+        "Implemented slash commands (register, stats, leaderboards) and cron jobs for automated clipper stat updates. Adopted by 3 Discord organizations for clipper management."
+      ],
+      "links": [
+        "https://github.com/amitsuthar69/quasar",
         "#"
       ]
     },
@@ -77,28 +93,12 @@
       ],
       "time": "Mar 2024",
       "points": [
-        "A platform where folks from same college can exchange/sell their resource books and other stuff.",
-        "Aimed to address the challenge faced by my juniors who struggle to nd peers with the same resource books for the semester, facilitating resource exchanges by directly connecting them with each other."
+        "Built a platform that allows students from the same institute to find peers with similar course materials, by directly connecting them. Achieved 1200 page visits within the first day of launch",
+        "Facilitated over 20+ successful exchanges, helping students save time spent searching for resource books. Leveraged SSR for improved page loads, reducing TTFB by 30% compared to React’s default CSR."
       ],
       "links": [
         "https://github.com/amitsuthar69/handOver",
         "https://hand-over.vercel.app/"
-      ]
-    },
-    {
-      "projectName": "Teleport",
-      "projectStack": [
-        "golang",
-        "htmx"
-      ],
-      "time": "May 2023",
-      "points": [
-        "A URL shortener that generates unique short links using Base62 encoding of nanosecond-based hashes.",
-        "Built with Golang for efficiency and fully server-rendered for fast performance."
-      ],
-      "links": [
-        "https://github.com/amitsuthar69/teleport",
-        "https://tp.airtxt.me"
       ]
     }
   ],

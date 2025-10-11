@@ -1,6 +1,6 @@
 ---
 title: "handOver"
-subtitle: "A platform to exchange resource books and more!"
+subtitle: "A marketplace for college peers"
 githubLink: "https://github.com/amitsuthar69/handOver"
 liveLink: "https://hand-over.vercel.app/"
 imgPreview: "handover.png"

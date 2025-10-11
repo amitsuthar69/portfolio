@@ -1,6 +1,6 @@
 ---
-title: " Write you own LRU cache cause stdlib don't have any."
-subtitle: ""
+title: "Write you own LRU cache cause stdlib don't have any."
+subtitle: "least recently used cache library"
 date: "2025-03-02"
 tags: ["golang", "lru", "cache"]
 ---
