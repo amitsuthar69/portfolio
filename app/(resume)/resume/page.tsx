@@ -17,8 +17,8 @@ const page: NextPage = () => {
       <Title titleInfo={data.title} />
       <Education eduInfo={data.education} />
       <Experience expInfo={data.experience} />
-      <Projects projectInfo={data.projects} />
       <Skills skills={data.skills} />
+      <Projects projectInfo={data.projects} />
     </div>
   );
 };

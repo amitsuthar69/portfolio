@@ -19,15 +19,9 @@
   "education": [
     {
       "institueName": "Thakur College of Engineering and Technology",
-      "score": "8.9",
+      "score": "CGPA 8.9/10",
       "courseName": "Artificial Intelligence and Machine Learning",
       "time": "2022-2026"
-    },
-    {
-      "institueName": "Thakur College of Science and Commerce",
-      "score": "77%",
-      "courseName": "HSC",
-      "time": "2021-2023"
     }
   ],
   "experience": [
@@ -37,8 +31,8 @@
       "time": "Jul 2025 - Oct 2025",
       "type": "Remote",
       "points": [
-        "Developed a React Native Android app to optimize Google Business Profiles, integrated UI with Firebase Backend, Google OAuth, Firestore and Razorpay billing workflows.",
-        "Built a custom AI model that generates business profile suggestions using Genetic Algorithm and Local Search Optimization."
+        "Built a React Native mobile app integrating Google My Business APIs with a custom Genetic Algorithm to compute a multi-objective business health score, enabling businesses to benchmark their profile quality against competitors.",
+        "Reduced redundant GMB API calls via Firestore caching for repeated profile lookups, and configured CI/CD workflows with GitHub Actions for automated builds"
       ]
     },
     {
@@ -47,16 +41,17 @@
       "time": "May 2024 - Aug 2024",
       "type": "Remote",
       "points": [
-        "Led the backend integration of an AI-driven interviewing SaaS using Vue.js and Nuxt3, delivering seamless user experience for 20+ enterprise clients across 4 countries.",
-        "Collaborated with senior developers to design and implement the Chat and Video Interview system, enabling AI-driven candidate assessments, boosting platform's core functionality and user experience."
+        "Integrated a Vue.js frontend with backend APIs for an AI-powered interview SaaS platform, handling team management, job pipelines, and candidate lifecycle tracking; deployed across 20+ enterprise clients in 4 countries.",
+        "Designed and built the chat and voice interview module for real-time candidate Q&A, integrated TTS for audio responses, and implemented proctoring controls including tab-switch detection and video-based cheating monitoring."
       ]
     }
   ],
   "projects": [
     {
-      "projectName": "Portsicle",
+      "projectName": "Portsicle - Join Public Router, Quickly!",
       "projectStack": [
-        "golang"
+        "Golang",
+        "SQLite"
       ],
       "time": "Dec 2022",
       "points": [
@@ -69,14 +64,59 @@
       ]
     },
     {
-      "projectName": "Quasar - Instagram stats for clippers.",
+      "projectName": "Real-time Log Streamer (tail -f over network)",
       "projectStack": [
-        "nodejs"
+        "Golang"
+      ],
+      "time": "Sept 2022",
+      "points": [
+        "Built a Unix-like tail -f log streaming system in Go using file watcher events and incremental reads, achieving 2ms avg / 3.3ms p95 latency and ~16K lines/sec throughput over WebSocket connections.",
+        "Designed a concurrent broadcast pipeline using a ring buffer and goroutine-based fan-out, supporting 250 concurrent clients with snapshot-on-connect and O(1) tail-read behavior independent of file size."
+      ],
+      "links": [
+        "https://github.com/amitsuthar69/tailf-log-streamer",
+        "#"
+      ]
+    },
+    {
+      "projectName": "NeuWidget - Lightweight Desktop Widget Framework",
+      "projectStack": [
+        "JavaScript, Neutralinojs"
+      ],
+      "time": "March 2026",
+      "points": [
+        "Developed a minimal, Electron-free framework for building cross-platform desktop widgets with low resource overhead.",
+        "Designed a pluggable architecture with support for auto launch on system reboot, window controls (drag/resize), keyboard ​shortcuts, and a persistent k/v storage. Packaged developer tooling via CLI (npx create-neuwidget) to simplify widget creation."
+      ],
+      "links": [
+        "https://github.com/amitsuthar69/NeuWidget",
+        "#"
+      ]
+    },
+    {
+      "projectName": "SocketShare - LAN File Sharing App",
+      "projectStack": [
+        "Golang, React"
+      ],
+      "time": "Feb 2025",
+      "points": [
+        "Developed a LAN file-sharing desktop app with distributed file registry synchronization and reliable file transfers over TCP.",
+        "Implemented a UDP-broadcast based peer discovery system, heartbeat keep-alive mechanism, event-driven UI notifications, and private IPv4 resolution across WiFi/Ethernet interfaces with intelligent fallbacks."
+      ],
+      "links": [
+        "https://github.com/amitsuthar69/socket.share",
+        "#"
+      ]
+    },
+    {
+      "projectName": "Quasar - Clipper Analytics & Automation Bot",
+      "projectStack": [
+        "Nodejs"
       ],
       "time": "Nov 2024",
       "points": [
-        "Developed an interactive Discord bot using Instagram Reel API with bio-code based profile verification.",
-        "Implemented slash commands (register, stats, leaderboards) and cron jobs for automated clipper stat updates. Adopted by 3 Discord organizations for clipper management."
+        "Built a Discord bot to manage and authenticate clippers for streamers by verifying clipper profiles and tracking submitted content.",
+        "Integrated Instagram APIs to fetch reel metrics (views, likes, comments) and implemented cron-based pipelines to continuously aggregate stats and estimate clipper revenue. Actively used by 3 discord servers."
       ],
       "links": [
         "https://github.com/amitsuthar69/quasar",
@@ -86,10 +126,10 @@
     {
       "projectName": "handOver",
       "projectStack": [
-        "react",
-        "typeScript",
-        "tailwindcss",
-        "nextjs"
+        "React",
+        "TypeScript",
+        "Tailwindcss",
+        "Nextjs"
       ],
       "time": "Mar 2024",
       "points": [
@@ -110,15 +150,24 @@
       "HTML",
       "CSS"
     ],
-    "framework": [
+    "frameworks": [
       "React",
-      "Vue",
+      "React Native",
+      "Node (Express)",
       "Next",
       "Tailwind"
     ],
     "databases": [
       "MongoDB",
       "SQLite"
+    ],
+    "tools": [
+      "Git",
+      "GitHub",
+      "Linux",
+      "Docker",
+      "Firebase",
+      "AWS EC2"
     ]
   }
 }
