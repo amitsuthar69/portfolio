@@ -1,0 +1,11 @@
+.system-root{
+  position: fixed; inset: 0;
+  background: #07080A;
+  overflow: hidden;
+  cursor: none;
+}
+@media (max-width: 900px){ .system-root{ cursor: auto; } }
+
+.system-canvas-wrap{
+  position: absolute; inset: 0;
+}
