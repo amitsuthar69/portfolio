@@ -43,26 +43,38 @@ export default function SystemCanvas({ activeId, onSelect, activeTag }: Props) {
     const w = parent.clientWidth, h = parent.clientHeight;
     sizeRef.current = { w, h };
 
+    const isMobile = w < 700;
+    // reserve room at top (identity panel) and bottom (tag filter panel) so
+    // the graph settles between them instead of underneath them
+    const safeTop = isMobile ? 130 : 0;
+    const safeBottom = isMobile ? 210 : 0;
+    // scale node spread down to fit narrow viewports
+    const spreadScale = isMobile ? Math.min(1, (w - 80) / 480) : 1;
+
     const edgeData = deriveEdges();
     const expEdgeData = deriveExperienceEdges();
     const nodes: GraphNode[] = [];
 
+    // graph center sits in the middle of the safe zone between top/bottom panels, not raw viewport center
+    const cx = w / 2;
+    const cy = safeTop + (h - safeTop - safeBottom) / 2;
+
     // core node at center
     nodes.push({
       id: 'core', label: 'Amit', kind: 'core', tags: [],
-      x: w / 2, y: h / 2, vx: 0, vy: 0, radius: 34,
+      x: cx, y: cy, vx: 0, vy: 0, radius: isMobile ? 26 : 34,
     });
 
     // project nodes seeded in a circle around core
     const angleStep = (Math.PI * 2) / projects.length;
     projects.forEach((p, i) => {
       const angle = i * angleStep;
-      const dist = 220;
+      const dist = 220 * spreadScale;
       nodes.push({
         id: p.id, label: p.name, kind: 'project', tags: p.stack,
-        x: w / 2 + Math.cos(angle) * dist,
-        y: h / 2 + Math.sin(angle) * dist,
-        vx: 0, vy: 0, radius: p.status === 'live' ? 22 : 18,
+        x: cx + Math.cos(angle) * dist,
+        y: cy + Math.sin(angle) * dist,
+        vx: 0, vy: 0, radius: (p.status === 'live' ? 22 : 18) * (isMobile ? 0.82 : 1),
       });
     });
 
@@ -70,19 +82,19 @@ export default function SystemCanvas({ activeId, onSelect, activeTag }: Props) {
     const expAngleStep = (Math.PI * 2) / Math.max(experiences.length, 1);
     experiences.forEach((e, i) => {
       const angle = expAngleStep * i - Math.PI / 2; // start pointing up
-      const dist = 340;
+      const dist = 340 * spreadScale;
       nodes.push({
         id: e.id, label: e.company, kind: 'experience', tags: e.stack,
-        x: w / 2 + Math.cos(angle) * dist,
-        y: h / 2 + Math.sin(angle) * dist,
-        vx: 0, vy: 0, radius: 20,
+        x: cx + Math.cos(angle) * dist,
+        y: cy + Math.sin(angle) * dist,
+        vx: 0, vy: 0, radius: 20 * (isMobile ? 0.82 : 1),
       });
     });
 
     // contact node, offset to bottom-right
     nodes.push({
       id: 'contact', label: 'Contact', kind: 'contact', tags: [],
-      x: w / 2 + 300, y: h / 2 + 260, vx: 0, vy: 0, radius: 26,
+      x: cx + 300 * spreadScale, y: cy + 260 * spreadScale, vx: 0, vy: 0, radius: 26 * (isMobile ? 0.82 : 1),
     });
 
     const edges: GraphEdge[] = [
@@ -97,7 +109,7 @@ export default function SystemCanvas({ activeId, onSelect, activeTag }: Props) {
     ];
 
     simRef.current = new ForceSim(nodes, edges, {
-      width: w, height: h,
+      width: w, height: h, safeTop, safeBottom,
       repulsion: 18000,
       linkDistance: 210,
       linkStrength: 0.02,
@@ -119,7 +131,8 @@ export default function SystemCanvas({ activeId, onSelect, activeTag }: Props) {
       const parent2 = canvas!.parentElement!;
       const w2 = parent2.clientWidth, h2 = parent2.clientHeight;
       sizeRef.current = { w: w2, h: h2 };
-      simRef.current?.setSize(w2, h2);
+      const isMobile2 = w2 < 700;
+      simRef.current?.setSize(w2, h2, isMobile2 ? 130 : 0, isMobile2 ? 210 : 0);
     }
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -192,8 +205,9 @@ export default function SystemCanvas({ activeId, onSelect, activeTag }: Props) {
             cam.targetZoom = 1.5;
           }
         } else {
-          cam.targetX = w / 2;
-          cam.targetY = h / 2;
+          const coreNode = sim.nodes.find(n => n.id === 'core');
+          cam.targetX = coreNode ? coreNode.x : w / 2;
+          cam.targetY = coreNode ? coreNode.y : h / 2;
           cam.targetZoom = 1;
         }
         cam.x += (cam.targetX - cam.x) * 0.08;

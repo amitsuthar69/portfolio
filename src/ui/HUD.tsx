@@ -43,7 +43,7 @@ export default function HUD({ activeId, onSelect, activeTag, onTag }: Props) {
           <span className="hud-dot" />
           <span className="hud-name">AMIT SUTHAR</span>
         </div>
-        <div className="hud-sub">BACKEND ENGINEER — SYSTEM ONLINE</div>
+        <div className="hud-sub">BACKEND ENGINEER</div>
         <div className="hud-clock">{clock}</div>
       </div>
 
@@ -53,8 +53,8 @@ export default function HUD({ activeId, onSelect, activeTag, onTag }: Props) {
         <span className="hud-hint-dim">DRAG TO PERTURB · ESC TO CLOSE</span>
       </div>
 
-      {/* bottom-left legend / filter */}
-      <div className="hud-legend">
+      {/* bottom-left legend / filter — hidden on mobile while a detail panel is open, since both dock to the bottom */}
+      <div className={'hud-legend' + (activeId ? ' hud-legend-panel-open' : '')}>
         <div className="hud-legend-title">FILTER BY STACK</div>
         <div className="hud-legend-tags">
           {allTags.map(tag => (

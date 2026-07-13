@@ -29,6 +29,8 @@ interface SimOptions {
   linkStrength: number;
   centerStrength: number;
   damping: number;
+  safeTop?: number;
+  safeBottom?: number;
 }
 
 export class ForceSim {
@@ -53,9 +55,11 @@ export class ForceSim {
     return this.adjacency.get(id) || [];
   }
 
-  setSize(w: number, h: number) {
+  setSize(w: number, h: number, safeTop?: number, safeBottom?: number) {
     this.opts.width = w;
     this.opts.height = h;
+    if (safeTop !== undefined) this.opts.safeTop = safeTop;
+    if (safeBottom !== undefined) this.opts.safeBottom = safeBottom;
   }
 
   step(dt: number) {
@@ -113,12 +117,15 @@ export class ForceSim {
       n.x += n.vx * dt;
       n.y += n.vy * dt;
 
-      // soft bounds
+      // soft bounds — top/bottom get extra inset on small viewports to
+      // clear the fixed identity/legend HUD panels
       const margin = n.radius + 40;
+      const marginTop = margin + (opts.safeTop || 0);
+      const marginBottom = margin + (opts.safeBottom || 0);
       if (n.x < margin) { n.x = margin; n.vx *= -0.4; }
       if (n.x > opts.width - margin) { n.x = opts.width - margin; n.vx *= -0.4; }
-      if (n.y < margin) { n.y = margin; n.vy *= -0.4; }
-      if (n.y > opts.height - margin) { n.y = opts.height - margin; n.vy *= -0.4; }
+      if (n.y < marginTop) { n.y = marginTop; n.vy *= -0.4; }
+      if (n.y > opts.height - marginBottom) { n.y = opts.height - marginBottom; n.vy *= -0.4; }
     }
   }
 }

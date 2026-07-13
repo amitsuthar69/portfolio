@@ -12,12 +12,32 @@ export default function SystemCursor() {
     let mx = 0, my = 0, rx = 0, ry = 0;
     let raf: number;
 
+    let lastCheck = 0;
     function move(e: MouseEvent) {
       mx = e.clientX; my = e.clientY;
       dot!.style.left = mx + 'px'; dot!.style.top = my + 'px';
       label!.style.left = mx + 'px'; label!.style.top = my + 'px';
+
+      const now = performance.now();
+      if (now - lastCheck > 80) {
+        lastCheck = now;
+        const under = document.elementFromPoint(mx, my) as HTMLElement | null;
+        const stillOverTarget = under?.closest('[data-cursor]');
+        if (!stillOverTarget) {
+          ring!.classList.remove('hovering');
+          label!.style.opacity = '0';
+        }
+      }
     }
     window.addEventListener('mousemove', move);
+
+    // extra safety net: any click (e.g. the close button unmounting itself)
+    // should never leave a stale label on screen
+    function clickHandler() {
+      ring!.classList.remove('hovering');
+      label!.style.opacity = '0';
+    }
+    document.addEventListener('click', clickHandler, true);
 
     function loop() {
       rx += (mx - rx) * 0.22;
@@ -53,6 +73,7 @@ export default function SystemCursor() {
       window.removeEventListener('mousemove', move);
       document.removeEventListener('mouseover', overHandler);
       document.removeEventListener('mouseout', outHandler);
+      document.removeEventListener('click', clickHandler, true);
     };
   }, []);
 
