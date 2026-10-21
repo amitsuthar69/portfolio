@@ -1,11 +1,11 @@
-import SystemApp from './ui/SystemApp';
 import { Analytics } from '@vercel/analytics/react';
+import Portfolio from './Portfolio';
 
 export default function App() {
   return (
     <>
       <Analytics />
-      <SystemApp />
+      <Portfolio />
     </>
   );
 }
