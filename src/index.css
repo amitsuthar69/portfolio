@@ -32,10 +32,9 @@ a {
   all: unset;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 100% 2px;
-  background-position: 0 92%;
-  background-repeat: no-repeat;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.14em;
   transition: color .15s;
 }
 
