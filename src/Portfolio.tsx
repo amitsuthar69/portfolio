@@ -125,7 +125,6 @@ function Page() {
 
         <Section id="work" label="01 · Built">
           <Project id="parsel">
-            I built{' '}
             <Unfold k="p1" label="a log aggregator on Redis Streams">
               <Ext className="pname" href={repo('parsel')}>Parsel</Ext>, distributed log aggregation
               on Redis Streams: consumer groups, a live WebSocket dashboard for tailing logs
@@ -139,7 +138,6 @@ function Page() {
           </Project>
 
           <Project id="portsicle">
-            I built{' '}
             <Unfold k="p2" label="my own ngrok">
               <Ext className="pname" href={repo('portsicle')}>Portsicle</Ext>, which gives a local
               web server a public HTTPS endpoint by tunnelling traffic over a secure WebSocket,{' '}
@@ -151,7 +149,6 @@ function Page() {
           </Project>
 
           <Project id="neuwidget">
-            I’m building{' '}
             <Unfold k="p5" label="desktop widgets without Electron">
               <Ext className="pname" href={repo('neuwidget')}>NeuWidget</Ext>, a minimal JavaScript
               framework for cross-platform desktop widgets on NeutralinoJS, with low resource
@@ -161,7 +158,7 @@ function Page() {
           </Project>
 
           <Project id="flow">
-            Tired of restarting Go apps, I built{' '}
+            tired of restarting Go apps, so built{' '}
             <Unfold k="p4" label="Flow">
               <Ext className="pname" href={repo('flow')}>Flow</Ext>, a CLI that live-reloads Go
               apps: save a file and the program re-runs, no hard exit.{' '}
@@ -170,7 +167,6 @@ function Page() {
           </Project>
 
           <Project id="gotth">
-            I built{' '}
             <Unfold k="p3" label="a tech stack with an unfortunate name">
               <Ext className="pname" href={repo('gotth')}>GoTTH</Ext>: Go, Templ, Tailwind and HTMX,
               on Turso SQLite. One command and you have a full-stack Go web project.{' '}
@@ -205,12 +201,8 @@ function Page() {
           <p>
             Before that I interned at{' '}
             <Unfold k="e2" label="10Matrix Prime">
-              10Matrix Prime, building a mobile app that scores a business’s Google Business
-              Profile so it can benchmark against competitors. The scoring runs on{' '}
-              <Unfold k="e2b" label="a custom genetic algorithm">
-                a custom genetic algorithm, with Razorpay for payments and GitHub Actions for
-                CI/CD. <span className="meta">React Native · Firebase · Python</span>
-              </Unfold>{' '}
+              10Matrix Prime, built a cross platform mobile app that scores Google Business
+              Profiles so it can benchmark against competitors. {" "}
               <span className="meta">Jul – Oct 2025</span>
             </Unfold>
           </p>
@@ -221,9 +213,7 @@ function Page() {
               PoiseCode, where I built a chat-and-voice interview module for real-time Q&amp;A,
               with OpenAI TTS for spoken responses and{' '}
               <Unfold k="e3b" label="proctoring">
-                proctoring that catches tab switches and flags cheating on video. It shipped to
-                20+ enterprise clients in 4 countries.{' '}
-                <span className="meta">Vue.js · Node.js · MongoDB</span>
+                proctoring that catches tab switches and flags cheating on video.
               </Unfold>{' '}
               <span className="meta">May – Aug 2024</span>
             </Unfold>
